@@ -1,0 +1,10 @@
+/data/**/*.jpg
+/data/*.jpg
+/data/**/*.png
+/data/*.png
+/output/
+/installs/
+
+/.idea
+**/__pychace__
+*.pyc
