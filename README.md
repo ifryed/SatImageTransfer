@@ -39,6 +39,7 @@ star tracker algorithm to extract the constellation in the picture.
 
 ## Run commands
 To capture an image and compress it run the following command:
+
 `python capture_image.py [demo]`
 
 Use the 'demo' to run the process on an image from the data, otherwise it will 
@@ -46,6 +47,7 @@ capture an image using the computers' camera.
 All the layers will be saved at the '../output' folder.
 
 To reconstruct an image from laplacian layers run:
+
 `python get_image.py <Path to laplacian layers folder>`
 
 ## Special Thanks
