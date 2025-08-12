@@ -5,11 +5,15 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 
-im_size = tuple(np.ones((2, 1)) * 32)
+def setSize(new_size):
+    global im_size,rand_points
+    im_size = tuple((np.ones((2, 1),dtype=int) * new_size).flatten())
+    rand_points = getRandomPoints(im_size[0])
 
 
 def randomDiff(img, im_size, rand_points):
     img = cv2.resize(img, im_size).astype(int)
+
     ret_vec = np.zeros(len(rand_points))
     for i in range(len(rand_points)):
         x1, y1 = rand_points[i][0]
@@ -29,9 +33,6 @@ def getRandomPoints(n=32, seed=42):
 
         ret_points.append((p1, p2))
     return ret_points
-
-
-rand_points = getRandomPoints()
 
 
 def extractFeat(img):
@@ -131,3 +132,6 @@ def starFinder(img, star_num=20, disp=False):
         plt.show()
 
     return pts
+
+
+setSize(32)
